@@ -24,13 +24,18 @@
         "python3-modules.json",
         "python3-pycryptodomex.json",
         "python3-pyQt5.json",
+        "libusb.json",
+        "python3-cython.json",
+        "python3-hidapi.json",
+        "python3-trezor_agent.json",
         "groestlcoin-hash.json",
         {
             "name": "electrum-grs",
             "buildsystem": "simple",
             "build-commands": [
                 "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} .[fast]",
-                "install -Dp -m 644 org.groestlcoin.electrum-grs.metainfo.xml /app/share/metainfo/org.groestlcoin.electrum-grs.metainfo.xml"
+                "install -Dp -m 644 org.groestlcoin.electrum-grs.metainfo.xml /app/share/metainfo/org.groestlcoin.electrum-grs.metainfo.xml",
+                "install -Dp -m 644 electrum_grs/gui/icons/electrum-grs.png /app/share/icons/hicolor/128x128/apps/electrum-grs.png"
             ],
             "post-install": [
                 "desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=electrum-grs --set-key=Icon --set-value=org.groestlcoin.electrum-grs electrum-grs.desktop"
