@@ -13,7 +13,8 @@
     </p>
     <p>
       Do not trust. Verify.
-
+    </p>
+    <p>
       Electrum-GRS verifies that your transactions
       are in the Groestlcoin blockchain.
 
@@ -45,14 +46,11 @@
   <translation></translation>
 
   <screenshots>
-    <screenshot>
-      <image type="source">
-        https://user-images.githubusercontent.com/11212268/81817984-ba4e9300-952d-11ea-9446-f2128936af03.png
-      </image>
-    </screenshot>
+    <screenshot>https://raw.githubusercontent.com/flathub/org.groestlcoin.electrum-grs/master/screenshots/electrum-grs.png</screenshot>
   </screenshots>
 
   <releases>
+    <release date="2020-12-22" version="4.0.7"/>
     <release date="2019-09-22" version="3.3.8"/>
   </releases>
   <update_contact>groestlcoin_at_gmail.com</update_contact>
