@@ -76,7 +76,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.0.7/Electrum-grs-4.0.7.tar.gz",
-                    "sha256": "D396A2E337456D23D7302AC3A34B84D33941C0803BAD6F0AD04E985FCAB573D4"
+                    "sha256": "d396a2e337456d23d7302ac3a34b84d33941c0803bad6f0ad04e985fcab573d4"
                 },
                 {
                     "type": "patch",
