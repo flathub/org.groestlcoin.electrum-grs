@@ -1,0 +1,111 @@
+{
+    "name": "python3-requirements-binaries",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "modules": [
+        {
+            "name": "python3-cffi",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cffi==1.14.3\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ae/e7/d9c3a176ca4b02024debf82342dab36efadfc5776f9c8db077e8f6e71821/pycparser-2.20-py2.py3-none-any.whl",
+                    "sha256": "7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz",
+                    "sha256": "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+                }
+            ]
+        },
+        {
+            "name": "python3-cryptography",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography==3.1.1\""
+            ],
+            "sources": [
+                "python3-setuptools.json",
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ae/e7/d9c3a176ca4b02024debf82342dab36efadfc5776f9c8db077e8f6e71821/pycparser-2.20-py2.py3-none-any.whl",
+                    "sha256": "7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz",
+                    "sha256": "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+                    "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5d/4b/7bb135c5787c003cdbc44990c5f41908f0f37135e0bb554e880d90fd5f6f/cryptography-3.1.1.tar.gz",
+                    "sha256": "9d9fc6a16357965d282dd4ab6531013935425d0dc4950df2e0cf2a1b1ac1017d"
+                }
+            ]
+        },
+        {
+            "name": "python3-pycparser",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycparser==2.20\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ae/e7/d9c3a176ca4b02024debf82342dab36efadfc5776f9c8db077e8f6e71821/pycparser-2.20-py2.py3-none-any.whl",
+                    "sha256": "7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"
+                }
+            ]
+        },
+        {
+            "name": "PyQt5",
+            "cleanup": ["/bin/sip", "/include", "/lib/python3.8/site-packages/*.pyi"],
+            "config-opts": ["--disable-static", "--enable-x11"],
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3 configure.py --confirm-license --no-docstrings --assume-shared --no-sip-files --no-qml-plugin --no-tools --no-qsci-api -d ${FLATPAK_DEST}/lib/python3.8/site-packages --sip=${FLATPAK_DEST}/bin/sip --sip-incdir=${FLATPAK_DEST}/include --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages --disable=QtSensors --disable=QtWebEngine --disable=QtQuick --disable=QtQml --disable=QtTest --disable=QtWebChannel --disable=QtWebEngineCore --disable=QWebEngineWidgets --disable=QtQuickWidgets --disable=QtSql --disable=QtXmlPatterns --disable=QtMultimedia --disable=QtMultimediaWidgets --disable=QtLocation --disable=QtDesigner --disable=QtOpenGL --disable=QtBluetooth --disable=QtWebKit --disable=QtWebKitWidgets --disable=QtNfc --disable=QtPositioning",
+                "make -j $FLATPAK_BUILDER_N_JOBS",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/1d/31/896dc3dfb6c81c70164019a6cbba6ab037e3af7653d9ca60ccc874ee4c27/PyQt5-5.15.1.tar.gz",
+                    "sha256": "d9a76b850246d08da9863189ecb98f6c2aa9b4d97a3e85e29330a264aed0f9a1"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/73/8c/c662b7ebc4b2407d8679da68e11c2a2eb275f5f2242a92610f6e5024c1f2/PyQt5_sip-12.8.1.tar.gz",
+                    "sha256": "30e944db9abee9cc757aea16906d4198129558533eb7fadbe48c5da2bd18e0bd"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "sip",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "python3 configure.py --sip-module PyQt5.sip -b ${FLATPAK_DEST}/bin -d ${FLATPAK_DEST}/lib/python3.8/site-packages -e ${FLATPAK_DEST}/include -v ${FLATPAK_DEST}/share/sip --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages",
+                        "make -j $FLATPAK_BUILDER_N_JOBS",
+                        "make install"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://www.riverbankcomputing.com/static/Downloads/sip/4.19.24/sip-4.19.24.tar.gz",
+                            "sha256": "edcd3790bb01938191eef0f6117de0bf56d1136626c0ddb678f3a558d62e41e5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -2,50 +2,81 @@
     "id": "org.groestlcoin.electrum-grs",
     "sdk": "org.kde.Sdk",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.14",
-    "rename-icon": "electrum-grs",
-    "rename-desktop-file": "electrum-grs.desktop",
+    "runtime-version": "5.15",
+
     "command": "electrum-grs",
     "finish-args": [
-        /* Wayland and Xorg support */
-        "--socket=x11",
+        /* Xorg and Wayland support */
         "--socket=wayland",
+        "--socket=fallback-x11",
         /* Sound */
         "--socket=pulseaudio",
         /* Persistent storage */
         "--persist=.electrum-grs",
-        /* OpenGL access. */
-        "--device=dri",
+        /* OpenGL access and QR scanner. */
+        "--device=all",
         "--share=ipc",
         /* Network acess. */
         "--share=network"
     ],
+        "cleanup": [
+        "/include",
+        "/lib/debug",
+        "/share/man/man1"
+    ],
     "modules": [
-        "python3-modules.json",
-        "python3-pycryptodomex.json",
-        "python3-pyQt5.json",
-        "libusb.json",
-        "python3-cython.json",
-        "python3-hidapi.json",
-        "python3-trezor_agent.json",
-        "groestlcoin-hash.json",
+        "shared-modules/libusb/libusb.json",
+        "libsecp256k1.json",
+        {
+          "name": "zbar",
+          "config-opts": [
+            "--without-qt",
+            "--without-qt5",
+            "--without-gtk",
+            "--without-xv",
+            "--without-imagemagick",
+            "--without-dbus",
+            "--without-java",
+            "--without-npapi",
+            "--without-xshm",
+            "--with-python=python3",
+            "--disable-doc",
+            "--enable-codes=qrcode"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://git.linuxtv.org/zbar.git",
+              "tag": "0.23.1"
+            },
+            {
+              "type": "script",
+              "dest-filename": "autogen.sh",
+              "commands": [
+                "autoreconf -vfi -W none"
+              ]
+            }
+          ]
+        },
+        "python3-requirements-binaries.json",
+        "python3-requirements.json",
+        "python3-requirements-hw.json",
         {
             "name": "electrum-grs",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} .[fast]",
-                "install -Dp -m 644 org.groestlcoin.electrum-grs.metainfo.xml /app/share/metainfo/org.groestlcoin.electrum-grs.metainfo.xml",
-                "install -Dp -m 644 electrum_grs/gui/icons/electrum-grs.png /app/share/icons/hicolor/128x128/apps/electrum-grs.png"
-            ],
-            "post-install": [
-                "desktop-file-install --dir=/app/share/applications --set-key=Exec --set-value=electrum-grs --set-key=Icon --set-value=org.groestlcoin.electrum-grs electrum-grs.desktop"
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} .[full]",
+                "install -Dp -m 644 org.groestlcoin.electrum-grs.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+                "install -Dp -m 644 electrum_grs/gui/icons/electrum-grs.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+                "install -Dp -m 644 electrum-grs.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+                "desktop-file-edit --set-key=\"Icon\" --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop",
+                "desktop-file-edit --set-key=\"Exec\" --set-value=electrum-grs /app/share/applications/${FLATPAK_ID}.desktop"
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/groestlcoin/electrum-grs.git",
-                    "commit": "c407af82b91f54c895d35ea0631a380b744df42f",
-                    "tag": "v3.3.8"
+                    "type": "archive",
+                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.0.7/Electrum-grs-4.0.7.tar.gz",
+                    "sha256": "d396a2e337456d23d7302ac3a34b84d33941c0803bad6f0ad04e985fcab573d4"
                 },
                 {
                     "type": "patch",
