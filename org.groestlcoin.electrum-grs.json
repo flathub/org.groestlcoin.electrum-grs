@@ -3,23 +3,22 @@
     "sdk": "org.kde.Sdk",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15",
-
     "command": "electrum-grs",
     "finish-args": [
-        /* Xorg and Wayland support */
-        "--socket=wayland",
-        "--socket=fallback-x11",
+        /* Xorg support */
+        "--socket=x11",
+        "--env=QT_QPA_PLATFORM=xcb",
         /* Sound */
         "--socket=pulseaudio",
         /* Persistent storage */
-        "--persist=.electrum-grs",
+        "--persist=.electrum",
         /* OpenGL access and QR scanner. */
         "--device=all",
         "--share=ipc",
         /* Network acess. */
         "--share=network"
     ],
-        "cleanup": [
+    "cleanup": [
         "/include",
         "/lib/debug",
         "/share/man/man1"
@@ -75,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.0.9/Electrum-grs-4.0.9.tar.gz",
-                    "sha256": "fbde4c2cb46bd60615f6d79fed493ea1c31a3991d8d1a22a921305fca49837d4"
+                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.1.2/Electrum-grs-4.1.2.tar.gz",
+                    "sha256": "e3e2cd966b2bbfeae6c313975f24dad9e56c72dca71aa249b5fdadf3fa7e57e5"
                 },
                 {
                     "type": "patch",
