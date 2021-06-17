@@ -18,45 +18,45 @@
         /* Network acess. */
         "--share=network"
     ],
-"cleanup": [
-    "/include",
-    "/lib/debug",
-    "/share/man/man1"
-],
-"modules": [
-    "shared-modules/libusb/libusb.json",
-    "libsecp256k1.json",
-    {
-      "name": "zbar",
-      "config-opts": [
-        "--without-qt",
-        "--without-qt5",
-        "--without-gtk",
-        "--without-xv",
-        "--without-imagemagick",
-        "--without-dbus",
-        "--without-java",
-        "--without-npapi",
-        "--without-xshm",
-        "--with-python=python3",
-        "--disable-doc",
-        "--enable-codes=qrcode"
-      ],
-      "sources": [
+    "cleanup": [
+        "/include",
+        "/lib/debug",
+        "/share/man/man1"
+    ],
+    "modules": [
+        "shared-modules/libusb/libusb.json",
+        "libsecp256k1.json",
         {
-          "type": "git",
-          "url": "https://git.linuxtv.org/zbar.git",
-          "tag": "0.23.1"
-        },
-        {
-          "type": "script",
-          "dest-filename": "autogen.sh",
-          "commands": [
-            "autoreconf -vfi -W none"
+          "name": "zbar",
+          "config-opts": [
+            "--without-qt",
+            "--without-qt5",
+            "--without-gtk",
+            "--without-xv",
+            "--without-imagemagick",
+            "--without-dbus",
+            "--without-java",
+            "--without-npapi",
+            "--without-xshm",
+            "--with-python=python3",
+            "--disable-doc",
+            "--enable-codes=qrcode"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://git.linuxtv.org/zbar.git",
+              "tag": "0.23.1"
+            },
+            {
+              "type": "script",
+              "dest-filename": "autogen.sh",
+              "commands": [
+                "autoreconf -vfi -W none"
+              ]
+            }
           ]
-        }
-      ]
-    },
+        },
         "python3-requirements-binaries.json",
         "python3-requirements.json",
         "python3-requirements-hw.json",
