@@ -5,19 +5,19 @@
     "runtime-version": "5.15",
     "command": "electrum-grs",
     "finish-args": [
-    /* Xorg support */
-    "--socket=x11",
-    "--env=QT_QPA_PLATFORM=xcb",
-    /* Sound */
-    "--socket=pulseaudio",
-    /* Persistent storage */
-    "--persist=.electrum-grs",
-    /* OpenGL access and QR scanner. */
-    "--device=all",
-    "--share=ipc",
-    /* Network acess. */
-    "--share=network"
-],
+        /* Xorg support */
+        "--socket=x11",
+        "--env=QT_QPA_PLATFORM=xcb",
+        /* Sound */
+        "--socket=pulseaudio",
+        /* Persistent storage */
+        "--persist=.electrum",
+        /* OpenGL access and QR scanner. */
+        "--device=all",
+        "--share=ipc",
+        /* Network acess. */
+        "--share=network"
+    ],
 "cleanup": [
     "/include",
     "/lib/debug",
