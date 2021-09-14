@@ -19,8 +19,7 @@
       are in the Groestlcoin blockchain.
 
       Because Groestlcoin is not about trust,
-      It is about freedom and independence.
-    </p>
+      It is about freedom and independence. </p>
     <p>
       Main features are:
     </p>
@@ -50,6 +49,7 @@
   </screenshots>
 
   <releases>
+    <release date="2021-09-13" version="4.1.5"/>
     <release date="2021-06-15" version="4.1.2"/>
     <release date="2021-03-08" version="4.0.9"/>
     <release date="2020-12-22" version="4.0.7"/>
