@@ -2,20 +2,15 @@
     "id": "org.groestlcoin.electrum-grs",
     "sdk": "org.kde.Sdk",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "command": "electrum-grs",
     "finish-args": [
-        /* Xorg support */
         "--socket=x11",
         "--env=QT_QPA_PLATFORM=xcb",
-        /* Sound */
         "--socket=pulseaudio",
-        /* Persistent storage */
         "--persist=.electrum",
-        /* OpenGL access and QR scanner. */
         "--device=all",
         "--share=ipc",
-        /* Network acess. */
         "--share=network"
     ],
     "cleanup": [
@@ -27,35 +22,38 @@
         "shared-modules/libusb/libusb.json",
         "libsecp256k1.json",
         {
-          "name": "zbar",
-          "config-opts": [
-            "--without-qt",
-            "--without-qt5",
-            "--without-gtk",
-            "--without-xv",
-            "--without-imagemagick",
-            "--without-dbus",
-            "--without-java",
-            "--without-npapi",
-            "--without-xshm",
-            "--with-python=python3",
-            "--disable-doc",
-            "--enable-codes=qrcode"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://git.linuxtv.org/zbar.git",
-              "tag": "0.23.1"
-            },
-            {
-              "type": "script",
-              "dest-filename": "autogen.sh",
-              "commands": [
-                "autoreconf -vfi -W none"
-              ]
-            }
-          ]
+            "name": "zbar",
+            "config-opts": [
+                "--without-qt",
+                "--without-qt5",
+                "--without-gtk",
+                "--without-xv",
+                "--without-imagemagick",
+                "--without-dbus",
+                "--disable-video",
+                "--without-java",
+                "--with-python=python3",
+                "--with-doc=no",
+                "--without-npapi",
+                "--without-xshm",
+                "--with-python_prefix=\"${FLATPAK_DEST}\"",
+                "--with-python_exe_prefix=\"${FLATPAK_DEST}\"",
+                "--enable-codes=qrcode"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://git.linuxtv.org/zbar.git",
+                    "commit": "aac86d5f08d64ab4c3da78188eb622fa3cb07182"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "autoreconf -vfi -W none"
+                    ]
+                }
+            ]
         },
         "python3-requirements-binaries.json",
         "python3-requirements.json",
@@ -74,8 +72,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.1.5/Electrum-grs-4.1.5.tar.gz",
-                    "sha256": "0bf085fed19880939381bab50654d2663519af004ba7b53e0a80bae8ca44b091"
+                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.2.0/Electrum-grs-4.2.0.tar.gz",
+                    "sha256": "196de3e79e785a32acf54ebfe38f9ba74e615248d0b68a1a26533526ff8e48db"
                 },
                 {
                     "type": "patch",

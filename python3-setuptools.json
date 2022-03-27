@@ -1,17 +1,17 @@
 [
     {
         "type": "file",
-        "url": "https://files.pythonhosted.org/packages/2c/c5/0d38afb961f83e0d51f319f7dc166195ebabc1ea3cb20a10a77f500f7156/setuptools-46.4.0-py3-none-any.whl",
-        "sha256": "d05c2c47bbef97fd58632b63dd2b83426db38af18f65c180b2423fea4b67e6b8"
+        "url": "https://files.pythonhosted.org/packages/7d/c4/33822b323a5d2f6239ea668ad04261b6965c309953880a32ce373caf22c7/setuptools-60.9.2-py3-none-any.whl",
+        "sha256": "93b1a3037230bf9aa07327b9fc58f527d5f4e22d36705b55d55ba3ece8606ca6"
     },
     {
         "type": "file",
-        "url": "https://files.pythonhosted.org/packages/8c/23/848298cccf8e40f5bbb59009b32848a4c38f4e7f3364297ab3c3e2e2cd14/wheel-0.34.2-py2.py3-none-any.whl",
-        "sha256": "df277cb51e61359aba502208d680f90c0493adec6f0e848af94948778aed386e"
+        "url": "https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/wheel-0.37.1-py2.py3-none-any.whl",
+        "sha256": "4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a"
     },
     {
         "type": "file",
-        "url": "https://files.pythonhosted.org/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl",
-        "sha256": "b27c4dedae8c41aa59108f2fa38bf78e0890e590545bc8ece7cdceb4ba60f6e4"
+        "url": "https://files.pythonhosted.org/packages/6a/df/a6ef77a6574781a668791419ffe366c8acd1c3cf4709d210cb53cd5ce1c2/pip-22.0.3-py3-none-any.whl",
+        "sha256": "c146f331f0805c77017c6bb9740cec4a49a0d4582d0c3cc8244b057f83eca359"
     }
 ]
