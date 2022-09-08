@@ -72,12 +72,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.2.0/Electrum-grs-4.2.0.tar.gz",
-                    "sha256": "196de3e79e785a32acf54ebfe38f9ba74e615248d0b68a1a26533526ff8e48db"
-                },
-                {
-                    "type": "patch",
-                    "path": "electrum-grs-setup.patch"
+                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.3.1/Electrum-grs-4.3.1.tar.gz",
+                    "sha256": "6a11b2121fe72c63625a1f36ea78eea495f386453b2449d55b1982793ad61c36"
                 },
                 {
                     "type": "file",
