@@ -12,7 +12,7 @@
         {
             "type": "git",
             "url": "https://github.com/bitcoin-core/secp256k1",
-            "commit": "5dcc6f8dbdb1850570919fc9942d22f728dbc0af"
+            "commit": "acf5c55ae6a94e5ca847e07def40427547876101"
         }
     ],
     "post-install": [
