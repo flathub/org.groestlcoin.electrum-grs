@@ -2,7 +2,7 @@
     "id": "org.groestlcoin.electrum-grs",
     "sdk": "org.kde.Sdk",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "5.15-22.08",
     "command": "electrum-grs",
     "finish-args": [
         "--socket=x11",
@@ -15,7 +15,6 @@
     ],
     "cleanup": [
         "/include",
-        "/lib/debug",
         "/share/man/man1"
     ],
     "modules": [
@@ -72,8 +71,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.3.1/Electrum-grs-4.3.1.tar.gz",
-                    "sha256": "6a11b2121fe72c63625a1f36ea78eea495f386453b2449d55b1982793ad61c36"
+                    "url": "https://github.com/Groestlcoin/electrum-grs/releases/download/v4.4.4/Electrum-grs-4.4.4.tar.gz",
+                    "sha256": "b06940020b8e85322f2eb02876ea43cf772f4eec8479064c867b8ab3c5b0194a"
                 },
                 {
                     "type": "file",
