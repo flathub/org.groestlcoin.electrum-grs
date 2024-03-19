@@ -7,18 +7,13 @@
             "name": "python3-aiohttp",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiohttp==3.8.3\""
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiohttp\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/db/51/a507c856293ab05cdc1db77ff4bc1268ddd39f29e7dc4919aa497f0adbec/charset_normalizer-2.1.1-py3-none-any.whl",
-                    "sha256": "83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e9/10/d629476346112b85c912527b9080944fd2c39a816c2225413dbc0bb6fcc0/frozenlist-1.3.3.tar.gz",
-                    "sha256": "58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a"
+                    "url": "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz",
+                    "sha256": "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
                 },
                 {
                     "type": "file",
@@ -27,38 +22,38 @@
                 },
                 {
                     "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a7/fa/e01228c2938de91d47b307831c62ab9e4001e747789d0b05baf779a6488c/async_timeout-4.0.3-py3-none-any.whl",
+                    "sha256": "7405140ff1230c310e51dc27b3145b9092d659ce68ff733fb0cefe3ee42be028"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f0/eb/fcb708c7bf5056045e9e98f62b93bd7467eb718b0202e7698eb11d66416c/attrs-23.1.0-py3-none-any.whl",
+                    "sha256": "1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz",
+                    "sha256": "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz",
+                    "sha256": "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
+                },
+                {
+                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl",
                     "sha256": "90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl",
-                    "sha256": "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+                    "url": "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz",
+                    "sha256": "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d6/04/255c68974ec47fa754564c4abba8f61f9ed68b869bbbb854198d6259c4f7/yarl-1.8.1.tar.gz",
-                    "sha256": "af887845b8c2e060eb5605ff72b6f2dd2aab7a761379373fd89d314f4752abbf"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f2/bc/d817287d1aa01878af07c19505fafd1165cd6a119e9d0821ca1d1c20312d/attrs-22.1.0-py2.py3-none-any.whl",
-                    "sha256": "86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d6/c1/8991e7c5385b897b8c020cdaad718c5b087a6626d1d11a23e1ea87e325a7/async_timeout-4.0.2-py3-none-any.whl",
-                    "sha256": "8ca1e4fcf50d07413d66d1a5e416e42cfdf5851c981d679a09851a6853383b3c"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fa/a7/71c253cdb8a1528802bac7503bf82fe674367e4055b09c28846fdfa4ab90/multidict-6.0.2.tar.gz",
-                    "sha256": "5ff3bd75f38e4c43f1f470f2df7a4d430b821c4ce22be384e1459cb57d6bb013"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ff/4f/62d9859b7d4e6dc32feda67815c5f5ab4421e6909e48cbc970b6a40d60b7/aiohttp-3.8.3.tar.gz",
-                    "sha256": "3828fb41b7203176b82fe5d699e0d845435f2374750a44b480ea6b930f6be269"
+                    "url": "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz",
+                    "sha256": "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
                 }
             ]
         },
@@ -66,18 +61,18 @@
             "name": "python3-aiohttp-socks",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiohttp-socks==0.7.1\""
+                "pip3 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiohttp-socks==0.8.4\""
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b7/28/1d33556777314cec2710ecaf85f1ba5eee8e06c034d8e581780c64c1e0c7/python_socks-2.3.0-py3-none-any.whl",
-                    "sha256": "eb385a33bcc3909401aa29fc0a277cdd0c2ce586a99b61be1ddd1a4939f23061"
+                    "url": "https://files.pythonhosted.org/packages/0c/82/cbb43250a471a98511c982a2d795fb99f7e2e91f0c5077f034cd50496d21/python_socks-2.4.4-py3-none-any.whl",
+                    "sha256": "fda465d3ef229119ee614eb85f2b7c0ad28be6dd40e0ef8dd317c49e8725e514"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f3/77/3b0fcab3d5f88822678676e155feb4a28c7bbd97366e1372135af381bf50/aiohttp_socks-0.7.1-py3-none-any.whl",
-                    "sha256": "94bcff5ef73611c6c6231c2ffc1be4af1599abec90dbd2fdbbd63233ec2fb0ff"
+                    "url": "https://files.pythonhosted.org/packages/3f/81/cae77c14d88f5300b698c9ce39ae596605689b928495f1e66ec5648ad4b2/aiohttp_socks-0.8.4-py3-none-any.whl",
+                    "sha256": "74b21105634ed31d56ed6fee43701ca16218b53475e606d56950a4d17e8290ea"
                 }
             ]
         },
